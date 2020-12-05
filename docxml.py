@@ -226,7 +226,7 @@ hatch.paths.add_polyline_path([(7223.00,2800.00),(6623.00,2800.00),(6623.00,2409
 hatch = msp.add_hatch(color=5)
 hatch.paths.add_polyline_path([(7825.00,2800.00),(7225.00,2800.00),(7225.00,2409.00),(7825.00,2409.00)], is_closed=1)
 
-hatch = msp.add_hatch(color=7)
-hatch.paths.add_polyline_path([(7827.00,2800.00),(7827.00,2409.00),(7960.00,2409.00),(7960.00,2800.00)], is_closed=1)
+# hatch = msp.add_hatch(color=7)
+# hatch.paths.add_polyline_path([(7827.00,2800.00),(7827.00,2409.00),(7960.00,2409.00),(7960.00,2800.00)], is_closed=1)
 
 doc.saveas('Tuong.dxf')
