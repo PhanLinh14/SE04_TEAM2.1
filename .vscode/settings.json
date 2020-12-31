@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "C:\\Users\\dell\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "java.format.settings.url": "pip install git+https://github.com/mozman/ezdxf.git@master"
+}
