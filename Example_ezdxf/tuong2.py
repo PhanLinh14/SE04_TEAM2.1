@@ -10,14 +10,14 @@ doc.layers.new('TEXTLAYER', dxfattribs={'color': 2})
 # paperspace layout or block definition).
 msp = doc.modelspace()
 
-hatch = msp.add_hatch(color=1)
-hatch.paths.add_polyline_path([(3560,2840), (3560,-5120), (3800,-5360),(3800,3080)], is_closed=1)
-hatch = msp.add_hatch(color=7)
-hatch.paths.add_polyline_path([(3560,-5120), (-4400,-5120), (-4640,-5360),(3800,-5360)], is_closed=1)
-hatch = msp.add_hatch(color=2)
-hatch.paths.add_polyline_path([(-4400,2840), (-4400,2840), (3800,3080),(-4640,3080)], is_closed=1)
-hatch = msp.add_hatch(color=3)
-hatch.paths.add_polyline_path([(-4400,-5120), (-4400,2840), (-4640,3080),(-4640,-5360)], is_closed=1)
+# hatch = msp.add_hatch(color=1)
+# hatch.paths.add_polyline_path([(3560,2840), (3560,-5120), (3800,-5360),(3800,3080)], is_closed=1)
+# hatch = msp.add_hatch(color=7)
+# hatch.paths.add_polyline_path([(3560,-5120), (-4400,-5120), (-4640,-5360),(3800,-5360)], is_closed=1)
+# hatch = msp.add_hatch(color=2)
+# hatch.paths.add_polyline_path([(-4400,2840), (-4400,2840), (3800,3080),(-4640,3080)], is_closed=1)
+# hatch = msp.add_hatch(color=3)
+# hatch.paths.add_polyline_path([(-4400,-5120), (-4400,2840), (-4640,3080),(-4640,-5360)], is_closed=1)
 
 
 hatch = msp.add_hatch(color=7)
