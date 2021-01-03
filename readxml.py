@@ -1,25 +1,21 @@
+# Mô tả dữ liệu đầu vào: paving.xml
+# Yêu cầu bài toán: từ points của Wall vẽ ra tường, từ points của Tile vẽ ra hình dáng các viên gạch (points của Tile là toạ độ tương đối của Tile so với Wall)
+# Trong phạm vi bài toàn chỉ quan tâm đến các thẻ sau: Wall, Tile
+# Từ thẻ Area, có dữ liệu về vị trí các viên gạch
+# points của Tile là danh sách các đỉnh để vẽ lên hình dáng viên gạch(ngăn cách nhau bằng dấu |) 
+# Bên trên thẻ Wall Là danh sách các tường, points của Wall là toạ độ các đỉnh để vẽ ra tường trong hệ toạ độ 2D
+
 import ezdxf
 from xml.dom import minidom
-
-# Từ thẻ Area
-# Em có dữ liệu về vị trí các viên gạch
-# Và tường chứa các viên gạch là wallid
-# Bên trên thẻ Wall
-# Là danh sách các tường
-# Wallid ở Area chính là WallUid ở trên
-# Mapping với nhau lấy ra được points để vẽ tường
 
 xmldoc= minidom.parse("paving.xml")
 Wall = xmldoc.getElementsByTagName("Wall")
 item_tile = xmldoc.getElementsByTagName('Tile')
-area= xmldoc.getElementsByTagName('Area')
 
 doc = ezdxf.new(dxfversion='R2010')
 msp = doc.modelspace()
-list=[]
+
 def main():
-    m=str("")
-    m1=str("")
     hatch1 = msp.add_hatch(color=7)
     hatch = msp.add_hatch()
 
@@ -28,8 +24,6 @@ def main():
 
     for skill in Wall:
         x = skill.getAttribute("points").split("|")
-        m=skill.getAttribute("wallUID")
-        list.append(m)
         y0 = (x[0]).split(",")
         z0 = float (y0[0])
         z00 = float(y0[1])
@@ -79,11 +73,7 @@ def main():
         hatch.set_pattern_fill('NET', color=7, scale=30.0)
         hatch.bgcolor = (144,111,65)
         hatch.paths.add_polyline_path([(y01,y10),(y02,y20),(y03,y30),(y04,y40)], is_closed=1)
-        
-    
-    # for i in list:
-    #     if (i==m1):
-            #mapping
+
     doc.saveas('brick.dxf')
 
 main()
