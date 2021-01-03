@@ -19,8 +19,6 @@ def main():
     hatch1 = msp.add_hatch(color=7)
     hatch = msp.add_hatch()
 
-    for i in area:
-        m1= i.getAttribute('wallid')
 
     for skill in Wall:
         x = skill.getAttribute("points").split("|")
